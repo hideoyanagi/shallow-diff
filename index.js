@@ -62,11 +62,11 @@ module.exports = function shallowDiff(base, compared) {
             added.push(idx);
 
         // The updated items
-        } else if (value !== base[idx]) {
+        } else if (value != base[idx]) {
             updated.push(idx);
 
         // And the unchanged
-        } else if (value === base[idx]) {
+        } else if (value == base[idx]) {
             unchanged.push(idx);
         }
     });
