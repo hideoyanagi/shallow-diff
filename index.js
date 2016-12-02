@@ -64,12 +64,12 @@ module.exports = function shallowDiff(base, compared) {
 
         // The updated items
         // } else if (value != base[idx]) {
-        } else if (!_.isEqual(value, base[idx]) {
+        } else if (!_.isEqual(value, base[idx])) {
             updated.push(idx);
 
         // And the unchanged
         //} else if (value == base[idx]) {
-        } else if (_.isEqual(value, base[idx]))
+        } else if (_.isEqual(value, base[idx])) {
             unchanged.push(idx);
         }
     });
