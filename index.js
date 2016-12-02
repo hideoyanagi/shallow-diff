@@ -14,6 +14,7 @@ function assert(assertion, error) {
 }
 
 var loop = require("simple-loop");
+var _ = require('lodash')
 
 /**
  * Make a diff between two objects
@@ -62,11 +63,13 @@ module.exports = function shallowDiff(base, compared) {
             added.push(idx);
 
         // The updated items
-        } else if (value != base[idx]) {
+        // } else if (value != base[idx]) {
+        } else if (!_.isEqual(value, base[idx]) {
             updated.push(idx);
 
         // And the unchanged
-        } else if (value == base[idx]) {
+        //} else if (value == base[idx]) {
+        } else if (_.isEqual(value, base[idx]))
             unchanged.push(idx);
         }
     });
